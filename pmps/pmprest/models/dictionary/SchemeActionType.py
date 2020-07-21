@@ -1,0 +1,28 @@
+from django.db import models
+
+
+class SchemeActionType(models.TextChoices):
+    typelistfilter = "typelistfilter", "Typelist Filter"
+    bypassvalidation = "bypassvalidation", "Bypass Validation"
+    exclude = "exclude", "Exclude"
+    include = "include", "Include"
+    autoaccept = "autoaccept", "Auto Accept"
+    value = "value", "Value"
+    array = "array", "Array"
+    immutable = "immutable", "Immutable"
+    editable = "editable", "Editable"
+    available = "available", "Available"
+    notavailable = "notavailable", "Not Available"
+    visible = "visible", "Visible"
+    notvisible = "notvisible", "Not Visible"
+    existenceelectable = "existenceelectable", "Existence Electable"
+    existencerequired = "existencerequired", "Existence Required"
+    existencesuggested = "existencesuggested", "Existence Suggested"
+    required = "required", "Required"
+    notrequired = "notrequired", "Not Required"
+    offer = "offer", "Offer"
+    immutablerecalculate = "immutablerecalculate", "Immutable with re-evaluatoin"
+    sync = "sync", "Synchronize Coverage"
+    coverageduration = "coverageduration", "Duration of Coverage"
+    tax = "tax", "Tax"
+    commission = "commission", "Commission"

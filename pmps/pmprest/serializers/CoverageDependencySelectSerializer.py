@@ -6,5 +6,8 @@ class CoverageDependencySelectSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CoverageDependencySelect
-        fields = '__all__'
+        fields = ['itemIdentifier',
+                  'ancestorItemIdentifier',
+                  'coverageCode',
+                  'coverageDependency', ]
 

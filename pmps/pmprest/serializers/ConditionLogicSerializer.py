@@ -5,9 +5,21 @@ from ..models.model.ConditionLogic import ConditionLogic
 
 
 class ConditionLogicSerializer(serializers.ModelSerializer):
-    ConditionLogicDetails = ConditionLogicDetailSerializer(many=True)
+    conditionLogicDetails = ConditionLogicDetailSerializer(many=True)
 
     class Meta:
         model = ConditionLogic
-        fields = '__all__'
+        fields = ['effectiveDate',
+                  'expirationDate',
+                  'code',
+                  'locked',
+                  'jsonString',
+                  'itemIdentifier',
+                  'ancestorItemIdentifier',
+                  'versionNumber',
+                  'itemStatus',
+                  'logicCode',
+                  'name',
+                  'productCode',
+                  'conditionLogicDetails', ]
 

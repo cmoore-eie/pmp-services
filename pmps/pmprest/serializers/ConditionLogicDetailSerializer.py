@@ -5,5 +5,7 @@ from ..models.model.ConditionLogicDetail import ConditionLogicDetail
 class ConditionLogicDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = ConditionLogicDetail
-        fields = '__all__'
+        fields = ['itemIdentifier',
+                  'ancestorItemIdentifier',
+                  'conditionLogic', ]
 

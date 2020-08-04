@@ -1,0 +1,25 @@
+from enum import Enum
+
+
+class ChildType(Enum):
+    CONDITION_LOGIC_DETAIL = 'ConditionLogicDetail'
+    CONTRACT_ATTACHMENT = 'ContractAttachment'
+    CONTRACT_COVER = 'ContractCover'
+    CONTRACT_VERSION = 'ContractVersion'
+    COVERAGE_DEPENDENCY_CHILD = 'CoverageDependencyChild'
+    COVERAGE_DEPENDENCY_PARENT = 'CoverageDependencyParent'
+    COVERAGE_DEPENDENCY_SELECT = 'CoverageDependencySelect'
+    EXTERNAL_ATTRIBUTE_VALUE = 'ExternalAttributeValue'
+    EXTERNAL_TERM_VALUE = 'ExternalTermValue'
+    GENERAL_TERM_CODE = 'GeneralTermCode'
+    ITEM_LINK_DEFINITION_DETAIL = 'ItemLinkDefinitionDetail'
+    ITEM_LINK_DETAIL = 'ItemLinkDetail'
+    NEGOTIATION_DETAIL = 'NegotiationDetail'
+    NEGOTIATION_SECTION = 'NegotiationSection'
+    SCHEME_DETAIL = 'SchemeDetail'
+    SCHEME_DETAIL_ARRAY_VALUE = 'SchemeDetailArrayValue'
+    SCHEME_DETAIL_PARAM = 'SchemeDetailParam'
+    VIRTUAL_PRODUCT_CATEGORY = 'VirtualProductCategory'
+    VIRTUAL_PRODUCT_CONTRACT = 'VirtualProductContract'
+    VIRTUAL_PRODUCT_FLAVOUR = 'VirtualProductFlavour'
+    VIRTUAL_PRODUCT_LINE = 'VirtualProductLine'

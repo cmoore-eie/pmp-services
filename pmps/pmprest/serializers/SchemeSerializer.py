@@ -4,6 +4,7 @@ from ..models.model.SchemeDetail import SchemeDetail
 from .SchemeDetailSerializer import SchemeDetailSerializer
 from ..models.model.SchemeDetailArrayValue import SchemeDetailArrayValue
 from ..models.model.SchemeDetailParam import SchemeDetailParam
+from ..utils.ChildType import ChildType
 from ..utils.ChildUpdate import update_item
 
 
@@ -20,9 +21,9 @@ class SchemeSerializer(WritableNestedModelSerializer):
             child_list = dict(child)  # Convert the OrderDict to plain dict to enable the information to be processed
             param_data = child_list.pop('schemeDetailParams')
             array_data = child_list.pop('schemeDetailArrayValues')
-            item_instance = update_item(instance, [child_list], 'SchemeDetail')  # Data must be a list hence []
-            update_item(item_instance, param_data, 'SchemeDetailParam')
-            update_item(item_instance, array_data, 'SchemeDetailArrayValue')
+            item_instance = update_item(instance, [child_list], ChildType.SCHEME_DETAIL)  # Data must be a list hence []
+            update_item(item_instance, param_data, ChildType.SCHEME_DETAIL_PARAM)
+            update_item(item_instance, array_data, ChildType.SCHEME_DETAIL_ARRAY_VALUE)
 
         instance.save()
 

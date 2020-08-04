@@ -6,5 +6,12 @@ class CoverageDependencyParentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CoverageDependencyParent
-        fields = '__all__'
+        fields = ['itemIdentifier',
+                  'ancestorItemIdentifier',
+                  'coverageCode',
+                  'leftParenthesis',
+                  'rightParenthesis',
+                  'itemSequence',
+                  'conditionLogic',
+                  'coverageDependency', ]
 

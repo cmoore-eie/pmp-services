@@ -9,6 +9,7 @@ from .VirtualProductCategorySerializer import VirtualProductCategorySerializer
 from .VirtualProductContractSerializer import VirtualProductContractSerializer
 from .VirtualProductFlavourSerializer import VirtualProductFlavourSerializer
 from .VirtualProductLineSerializer import VirtualProductLineSerializer
+from ..utils.ChildType import ChildType
 from ..utils.ChildUpdate import update_item
 
 
@@ -27,10 +28,10 @@ class VirtualProductSerializer(WritableNestedModelSerializer):
         for field, value in validated_data.items():
             setattr(instance, field, value)
 
-        update_item(instance, flavour_data, 'VirtualProductFlavour')
-        update_item(instance, line_data, 'VirtualProductLine')
-        update_item(instance, category_data, 'VirtualProductCategory')
-        update_item(instance, contract_data, 'VirtualProductContract')
+        update_item(instance, flavour_data, ChildType.VIRTUAL_PRODUCT_FLAVOUR)
+        update_item(instance, line_data, ChildType.VIRTUAL_PRODUCT_LINE)
+        update_item(instance, category_data, ChildType.VIRTUAL_PRODUCT_CATEGORY)
+        update_item(instance, contract_data, ChildType.VIRTUAL_PRODUCT_CONTRACT)
 
         instance.save()
 

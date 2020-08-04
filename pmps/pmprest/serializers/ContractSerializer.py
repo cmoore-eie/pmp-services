@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.core.exceptions import ObjectDoesNotExist
 from drf_writable_nested import WritableNestedModelSerializer
 
@@ -6,6 +8,7 @@ from ..models.model.Contract import Contract
 from ..models.model.ContractAttachment import ContractAttachment
 from ..models.model.ContractCover import ContractCover
 from ..models.model.ContractVersion import ContractVersion
+from ..utils.ChildType import ChildType
 from ..utils.ChildUpdate import update_item
 
 
@@ -22,9 +25,9 @@ class ContractSerializer(WritableNestedModelSerializer):
             version_list = dict(version)  # Convert the OrderDict to plain dict to enable the information to be processed
             attachment_data = version_list.pop('contractAttachments')
             cover_data = version_list.pop('contractCovers')
-            item_instance = update_item(instance, [version_list], 'ContractVersion')  # Data must be a list hence []
-            update_item(item_instance, attachment_data, 'ContractAttachment')
-            update_item(item_instance, cover_data, 'ContractCover')
+            item_instance = update_item(instance, [version_list], ChildType.CONTRACT_VERSION)  # Data must be a list hence []
+            update_item(item_instance, attachment_data, ChildType.CONTRACT_ATTACHMENT)
+            update_item(item_instance, cover_data, ChildType.CONTRACT_COVER)
 
         instance.save()
 
@@ -62,4 +65,6 @@ class ContractSerializer(WritableNestedModelSerializer):
                   'itemStatus',
                   'name',
                   'productCode',
-                  'contractVersions', ]
+                  'contractVersions',
+                  'create_time',
+                  'update_time', ]

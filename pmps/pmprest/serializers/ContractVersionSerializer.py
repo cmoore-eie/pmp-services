@@ -22,4 +22,5 @@ class ContractVersionSerializer(UniqueFieldsMixin, WritableNestedModelSerializer
                   'hiddenContract',
                   'existence',
                   'contractAttachments',
-                  'contractCovers', ]
+                  'contractCovers',
+                  'contract', ]
